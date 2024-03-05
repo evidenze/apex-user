@@ -155,6 +155,30 @@ php artisan test
   - **Method:** GET
   - **Description:** This endpoint retrieves a list of all users.
   - **Response:** Returns a JSON array containing user objects.
+  ```json
+    {
+        "status": true,
+        "message": "Users fetched successfully",
+        "data": [
+            {
+                "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
+                "name": "Ekanem",
+                "email": "john@example.com",
+                "role": "user",
+                "created_at": "2024-03-04T12:00:00Z",
+                "updated_at": "2024-03-04T12:00:00Z"
+            },
+            {
+                "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
+                "name": "Essien ekanem",
+                "email": "jane@example.com",
+                "role": "admin",
+                "created_at": "2024-03-04T12:00:00Z",
+                "updated_at": "2024-03-04T12:00:00Z"
+            }
+        ]
+    }
+    ```
 
 - **GET /api/users/{id}:** Retrieve a specific user by ID.
   - **Method:** GET
@@ -162,6 +186,20 @@ php artisan test
   - **Parameters:**
     - `id`: The ID of the user to retrieve.
   - **Response:** Returns a JSON object containing the user details if found, or a 404 error if the user does not exist.
+  ```json
+    {
+        "status": true,
+        "message": "User fetched successfully",
+        "data": {
+            "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
+            "name": "Essien Ekanem",
+            "email": "essien@gmail.com",
+            "role": "admin",
+            "created_at": "2024-03-04T12:00:00Z",
+            "updated_at": "2024-03-04T12:00:00Z"
+        }
+    }
+    ```
 
 - **POST /api/users:** Create a new user.
   - **Method:** POST
@@ -169,13 +207,30 @@ php artisan test
   - **Request Body:**
     ```json
     {
-        "name": "John Doe",
-        "email": "john@example.com",
+        "name": "Essien Ekanem",
+        "email": "essien@gmail.com",
         "password": "password123",
         "role": "user"
     }
     ```
   - **Response:** Returns a JSON object containing the created user details, including the ID, name, email, and role.
+  ```json
+  {
+    "status": true,
+    "message": "User registered successfully",
+    "data": {
+        "token": "access_token",
+        "user": {
+            "name": "Essien Ekanemmm",
+            "email": "essien@gmail.cm",
+            "role": "admin",
+            "id": "dbbeda2a-e6ee-4583-bc3d-67e09d85f343",
+            "updated_at": "2024-03-05T08:59:32.000000Z",
+            "created_at": "2024-03-05T08:59:32.000000Z"
+        }
+    }
+  }
+  ```
 
 - **PUT /api/users/{id}:** Update an existing user by ID.
   - **Method:** PUT
@@ -191,6 +246,20 @@ php artisan test
     }
     ```
   - **Response:** Returns a JSON object containing the updated user details.
+    ```json
+    {
+        "status": true,
+        "message": "User updated successfully",
+        "data": {
+            "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
+            "name": "Jane Smith",
+            "email": "jane@example.com",
+            "role": "admin",
+            "created_at": "2024-03-04T12:00:00Z",
+            "updated_at": "2024-03-04T12:00:00Z"
+        }
+    }
+    ```
 
 - **DELETE /api/users/{id}:** Delete a user by ID.
   - **Method:** DELETE
@@ -198,3 +267,10 @@ php artisan test
   - **Parameters:**
     - `id`: The ID of the user to delete.
   - **Response:** Returns a 200 Success response if the user is successfully deleted, or a 404 error if the user does not exist.
+    ```json
+    {
+        "status": true,
+        "message": "User deleted successfully",
+        "data": null
+    }
+    ```
