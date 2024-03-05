@@ -151,8 +151,9 @@ php artisan test
 
 ### User CRUD Operations
 
-- **GET /api/users:** Retrieve all users.
+- **GET:** `/api/users`: Retrieve all users.
   - **Method:** GET
+  - **Authorization Header:** Bearer access_token
   - **Description:** This endpoint retrieves a list of all users.
   - **Response:** Returns a JSON array containing user objects.
   ```json
@@ -180,8 +181,9 @@ php artisan test
     }
     ```
 
-- **GET /api/users/{id}:** Retrieve a specific user by ID.
+- **GET:** `/api/users/{id}`: Retrieve a specific user by ID.
   - **Method:** GET
+  - **Authorization Header:** Bearer access_token
   - **Description:** This endpoint retrieves a specific user by their unique ID.
   - **Parameters:**
     - `id`: The ID of the user to retrieve.
@@ -201,8 +203,9 @@ php artisan test
     }
     ```
 
-- **POST /api/users:** Create a new user.
+- **POST:** `/api/users`: Create a new user.
   - **Method:** POST
+  - **Authorization Header:** Bearer access_token
   - **Description:** This endpoint creates a new user with the provided details.
   - **Request Body:**
     ```json
@@ -232,8 +235,9 @@ php artisan test
   }
   ```
 
-- **PUT /api/users/{id}:** Update an existing user by ID.
+- **PUT:** `/api/users/{id}`: Update an existing user by ID.
   - **Method:** PUT
+  - **Authorization Header:** Bearer access_token
   - **Description:** This endpoint updates an existing user with the provided details.
   - **Parameters:**
     - `id`: The ID of the user to update.
@@ -261,8 +265,9 @@ php artisan test
     }
     ```
 
-- **DELETE /api/users/{id}:** Delete a user by ID.
+- **DELETE:** `/api/users/{id}`: Delete a user by ID.
   - **Method:** DELETE
+  - **Authorization Header:** Bearer access_token
   - **Description:** This endpoint deletes a user by their unique ID.
   - **Parameters:**
     - `id`: The ID of the user to delete.
