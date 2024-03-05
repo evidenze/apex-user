@@ -1,4 +1,3 @@
-```markdown
 # User Management System API
 
 This API is responsible for managing user profiles within an application, including operations such as user registration, login, and CRUD operations on users.
@@ -199,5 +198,3 @@ php artisan test
   - **Parameters:**
     - `id`: The ID of the user to delete.
   - **Response:** Returns a 200 Success response if the user is successfully deleted, or a 404 error if the user does not exist.
-
-```
