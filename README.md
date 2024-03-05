@@ -4,6 +4,13 @@ This API is responsible for managing user profiles within an application, includ
 
 ## Installation
 
+### Requirements
+
+- PHP (>= 8.2.6)
+- Composer
+- MySQL or any other supported database
+- Laravel Passport (for authentication)
+
 1. Clone the repository:
 
 ```
