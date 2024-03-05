@@ -80,7 +80,7 @@ The API will be available at `http://localhost:8000`.
 
 ## Running Tests
 
-Run tests to ensure everything is working correctly:
+Update `.env.testing` with the test credentials. Run tests to ensure everything is working correctly: 
 
 ```
 php artisan test
