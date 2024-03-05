@@ -164,7 +164,7 @@ php artisan test
             {
                 "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
                 "name": "Ekanem",
-                "email": "john@example.com",
+                "email": "essien@gmail.com",
                 "role": "user",
                 "created_at": "2024-03-04T12:00:00Z",
                 "updated_at": "2024-03-04T12:00:00Z"
@@ -172,7 +172,7 @@ php artisan test
             {
                 "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
                 "name": "Essien ekanem",
-                "email": "jane@example.com",
+                "email": "essien@gmail.com",
                 "role": "admin",
                 "created_at": "2024-03-04T12:00:00Z",
                 "updated_at": "2024-03-04T12:00:00Z"
@@ -225,7 +225,7 @@ php artisan test
         "token": "access_token",
         "user": {
             "name": "Essien Ekanemmm",
-            "email": "essien@gmail.cm",
+            "email": "essien@gmail.com",
             "role": "admin",
             "id": "dbbeda2a-e6ee-4583-bc3d-67e09d85f343",
             "updated_at": "2024-03-05T08:59:32.000000Z",
@@ -245,7 +245,7 @@ php artisan test
     ```json
     {
         "name": "Updated Name",
-        "email": "updated_email@example.com",
+        "email": "essien@gmail.com",
         "role": "admin"
     }
     ```
@@ -257,7 +257,7 @@ php artisan test
         "data": {
             "id": "335e5508-a9b9-4127-a40f-ac05265a736e",
             "name": "Jane Smith",
-            "email": "jane@example.com",
+            "email": "essien@gmail.com",
             "role": "admin",
             "created_at": "2024-03-04T12:00:00Z",
             "updated_at": "2024-03-04T12:00:00Z"
