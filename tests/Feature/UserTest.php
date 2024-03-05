@@ -9,6 +9,7 @@ use DateTime;
 use Illuminate\Support\Facades\DB;
 use Laravel\Passport\ClientRepository;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class UserTest extends TestCase
 {
@@ -53,7 +54,7 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(200)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User registered successfully', 'data' => []]);
     }
 
     public function testUserLogin()
@@ -69,7 +70,7 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(200)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User logged successfully', 'data' => []]);
     }
 
     public function testUserLogout()
@@ -77,7 +78,7 @@ class UserTest extends TestCase
         $response = $this->withHeaders($this->headers)->postJson('/api/logout');
 
         $response->assertStatus(200)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User logged out successfully', 'data' => []]);
     }
 
     public function testGetAllUsers()
@@ -85,7 +86,7 @@ class UserTest extends TestCase
         $response = $this->withHeaders($this->headers)->getJson('/api/users');
 
         $response->assertStatus(200)
-            ->assertJsonStructure(['data']);
+            ->assertJson(['status' => true, 'message' => 'Users fetched successfully', 'data' => []]);
     }
 
     public function testGetSingleUser()
@@ -94,8 +95,10 @@ class UserTest extends TestCase
 
         $response = $this->withHeaders($this->headers)->getJson('/api/users/' . $user->id);
 
+        Log::info($response->getContent());
+
         $response->assertStatus(200)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User fetched successfully', 'data' => []]);
     }
 
     public function testCreateUser()
@@ -108,7 +111,7 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(201)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User saved successfully', 'data' => []]);
     }
 
     public function testUpdateUser()
@@ -122,7 +125,7 @@ class UserTest extends TestCase
         ]);
 
         $response->assertStatus(200)
-            ->assertJsonStructure(['status', 'message', 'data']);
+            ->assertJson(['status' => true, 'message' => 'User updated successfully', 'data' => []]);
     }
 
     public function testDeleteUser()
